@@ -1,5 +1,6 @@
 import mongoose, { Model } from "mongoose";
-import {SignupData} from "../Routers/SignupEndpoint"
+import { SignupData } from "../authInterface";
+// import {SignupData} from "../Routers/SignupEndpoint"
 
 const SignupSchema = new mongoose.Schema<SignupData>({
         name: { type: String, required: true },

@@ -1,12 +1,12 @@
 import express, { Router } from 'express'
-import { UserModel } from '../Authentication/Controller/SignupService';
+import { UserModel } from '../../Authentication/Model/SignupSchema';
+
 
 export const Project = ()=>{
     const router = Router();
     router.post("/addproject",async (req,res)=>{
 
         if(req.body.projects != null ){
-            
             await UserModel.findOneAndUpdate({accessToken:req.body?.token||""},{$push:{projects:[req.body.projects]}})
             .then((data)=>{
                 res.status(200);

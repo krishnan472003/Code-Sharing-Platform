@@ -1,7 +1,7 @@
 import express, { Router } from "express"
-import { UserModel } from "../Authentication/Controller/SignupService"
+import { UserModel } from "../Model/SignupSchema"
 
-export const Account = ()=>{
+export const Token = ()=>{
     const router = Router()
     router.post("/account",async (req,res)=>{
     await UserModel.findOne({ accessToken: req.body?.token || "" })

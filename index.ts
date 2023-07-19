@@ -1,9 +1,9 @@
 import express from "express";
-import {Signup} from "./Authentication/Routers/SignupEndpoint";
-import { Login } from "./Authentication/Routers/LoginEndpoint";
+import {Signup} from "./Authentication/Routers/Signup";
+import { Login } from "./Authentication/Routers/Login";
 import {config} from "dotenv"
-import { Account } from "./Accounts/Account";
-import { Project } from "./Projects/AddProject";
+import { Project } from "./Projects/Routers/AddProject";
+import { Token } from "./Authentication/Routers/tokenValidation";
 
 // import {mongodb} from "./db"
 
@@ -15,8 +15,9 @@ const port: number = Number(process.env.PORT);
  app.use(express.json()) 
  app.use("/api",Signup());
  app.use("/api",Login());
- app.use("/api",Account());
- app.use("/api",Project())
+ app.use("/api",Project());
+ app.use("/api",Token());
+
 
 
 app.listen( port||3000, () =>{
