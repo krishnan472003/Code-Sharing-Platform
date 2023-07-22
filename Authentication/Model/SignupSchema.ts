@@ -11,5 +11,5 @@ const SignupSchema = new mongoose.Schema<SignupData>({
         projects: { type: [String], required: false }
       });
 
-export const UserModel = mongoose.model<SignupData>('userData', SignupSchema);
+export const UserModel = mongoose.model<SignupData>('user', SignupSchema);
       

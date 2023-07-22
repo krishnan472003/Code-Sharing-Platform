@@ -1,19 +1,14 @@
 import { Router, Request, Response } from "express";
-import { mongodb } from "../../db";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { SignupData } from "../authInterface";
 import { UserModel } from "../Model/SignupSchema";
-
-// import { sendData } from "./CreateUser";
-// import { SignupSchema } from "./SignupSchema";
 
 
 let data: SignupData;
 //api endpoint
 export const Signup = () => {
   const router = Router();
-  mongodb("user")
   console.log("In Signup")
   router.post("/signup", async (req: Request, res: Response) => {
     data = await {

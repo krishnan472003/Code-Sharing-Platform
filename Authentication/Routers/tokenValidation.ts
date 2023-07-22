@@ -3,7 +3,7 @@ import { UserModel } from "../Model/SignupSchema"
 
 export const Token = ()=>{
     const router = Router()
-    router.post("/account",async (req,res)=>{
+    router.post("/token",async (req,res)=>{
     await UserModel.findOne({ accessToken: req.body?.token || "" })
         .then((data)=>{
             console.log(data)

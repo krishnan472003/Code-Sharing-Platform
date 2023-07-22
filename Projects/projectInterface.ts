@@ -6,7 +6,9 @@ export interface Project{
     members?: Array<string>
 }
 export interface Chat{
+    message:string,
     sender:string,
+    project:string,
     timestamp: EpochTimeStamp,
     type: Type,
 }
