@@ -1,8 +1,5 @@
 export interface Project{
     name?: string,
-    id?: number,
-    createdOn?: EpochTimeStamp,
-    lastUpdatedOn?: EpochTimeStamp,
     members?: Array<string>
 }
 export interface Chat{

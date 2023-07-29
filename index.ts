@@ -8,6 +8,7 @@ import { Token } from "./Authentication/Routers/tokenValidation";
 import { postMessage } from "./Projects/Routers/postMessage";
 import cors from 'cors'
 import { mongodb } from "./db";
+import { joinUser} from "./Projects/Routers/joinUser"
 
 // import {mongodb} from "./db"
 
@@ -28,7 +29,8 @@ const port: number = Number(process.env.PORT);
  app.use("/api",Project());
  app.use("/api",Token());
 app.use("/api",getChats());
-app.use("/api",postMessage())
+app.use("/api",postMessage());
+app.use("/api",joinUser())
 
 
 app.listen( port||5000, () =>{
