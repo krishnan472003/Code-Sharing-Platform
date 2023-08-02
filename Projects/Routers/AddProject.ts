@@ -8,7 +8,7 @@ export const Project = () => {
     router.post("/addproject", async (req, res) => {
         //token,project
         if (req.body.projects != null) {
-            await UserModel.findOneAndUpdate({ accessToken: req.body?.token || "" }, { $push: { projects: [req.body.project] } })
+            await UserModel.findOneAndUpdate({ accessToken: req.body?.token || "" }, { $push: { projects: [req.body.projects] } })
                 .then((data) => {
                     return ProjectModel.create( {name:req.body.projects, $push: {members:[data.name]} })
                 })
