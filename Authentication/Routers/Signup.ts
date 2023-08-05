@@ -20,6 +20,7 @@ export const Signup = () => {
     };
     
     data.password = await bcrypt.hash(req.body.password, 10);
+    
     data.accessToken= jwt.sign(JSON.stringify(data), process.env.TOKEN_SECRET);
     res.json({token:data.accessToken})
     const newData = new UserModel(data)

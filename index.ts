@@ -1,6 +1,7 @@
 import express from "express";
 import {Signup} from "./Authentication/Routers/Signup";
 import { Login } from "./Authentication/Routers/Login";
+
 import {getChats} from "./Projects/Routers/getChats";
 import {config} from "dotenv"
 import { Project } from "./Projects/Routers/AddProject";
@@ -9,6 +10,7 @@ import { postMessage } from "./Projects/Routers/postMessage";
 import cors from 'cors'
 import { mongodb } from "./db";
 import { joinUser} from "./Projects/Routers/joinUser"
+import {Logout}  from "./Authentication/Routers/Logout"; // Import the Logout router
 
 // import {mongodb} from "./db"
 
@@ -26,6 +28,7 @@ const port: number = Number(process.env.PORT);
  app.use(express.json()) 
  app.use("/api",Signup());
  app.use("/api",Login());
+ app.use("/api", Logout()); // Use the Logout router
  app.use("/api",Project());
  app.use("/api",Token());
 app.use("/api",getChats());
