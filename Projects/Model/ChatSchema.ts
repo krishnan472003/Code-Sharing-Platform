@@ -2,7 +2,7 @@ import mongoose, { Model } from "mongoose";
 import { Chat } from "../projectInterface";
 
 const ChatSchema = new mongoose.Schema<Chat>({
-        sender: { type: String, required: true },//email
+        senderMail: { type: String, required: true },//email
         message:{type:String,required:true},
         project:{type:String, required: true},
         timestamp:{type: Number,required: true} ,

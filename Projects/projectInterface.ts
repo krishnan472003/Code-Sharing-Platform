@@ -4,7 +4,7 @@ export interface Project{
 }
 export interface Chat{
     message:string,
-    sender:string,
+    senderMail:string,
     project:string,
     timestamp: EpochTimeStamp,
     type: Type,
@@ -14,4 +14,5 @@ export enum Type {
     code = "code",
     error = "error"
   }
+
   

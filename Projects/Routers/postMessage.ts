@@ -10,7 +10,7 @@ export const postMessage = () => {
         await UserModel.findOne({ accessToken: req.body?.token || "" })
 
         ChatModel.create({
-            sender: req.body.email,
+            senderMail: req.body.email,
             project: req.body.project,
             timestamp: Date.now(),
             type: req.body.type,
