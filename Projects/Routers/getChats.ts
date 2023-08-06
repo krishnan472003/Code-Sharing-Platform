@@ -7,7 +7,7 @@ export const getChats = () => {
   console.log("get chats");
 
   router.post("/chats", async (req, res) => {
-    // send project and token
+    // send project and tokena
     const project = req.body.project;
         ChatModel.find({ project, timestamp: { $gt: Date.now() - 3600000 } })
         .then((data) => {

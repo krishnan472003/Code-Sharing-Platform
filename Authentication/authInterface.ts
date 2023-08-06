@@ -12,3 +12,4 @@ export interface SignupData {
     accessToken?:string;
     projects?: Array<string>
   }
+ 
