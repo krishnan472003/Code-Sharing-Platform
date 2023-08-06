@@ -1,12 +1,8 @@
 import express from "express";
-import {getChats} from "./Projects/Routers/getChats";
 import {config} from "dotenv"
-import { Project } from "./Projects/Routers/addProject";
 import {AuthModule} from "./Authentication/authentication.router"
-import { postMessage } from "./Projects/Routers/postMessage";
 import cors from 'cors'
 import { mongodb } from "./db";
-import { joinUser} from "./Projects/Routers/joinUser"
 import { ProjectModule } from "./Projects/project.router";
 
 // import {mongodb} from "./db"

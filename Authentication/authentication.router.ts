@@ -1,8 +1,9 @@
 import { Router } from "express"
 import { Login } from "./Routers/login";
-import { Signup } from "./Routers/signup";
-import { Token } from "./Routers/tokenValidation";
 import { Logout } from "./Routers/logout";
+import { Signup } from "./Routers/Signup";
+import { Token } from "./Routers/tokenValidation";
+
 export const AuthModule = ()=>{
     const router = Router();
     router.use("/auth",Signup());
